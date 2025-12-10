@@ -1,0 +1,144 @@
+/*
+ * STATE-SPECIFIC PAGE TEMPLATE
+ *
+ * This dynamic route handles state-level pages like:
+ * - /mva-leads-california
+ * - /mva-leads-texas
+ * - /mva-leads-florida
+ * etc.
+ *
+ * Usage:
+ * 1. Route pattern: /mva-leads-[state-slug]
+ * 2. Generates static pages for all 50 states at build time
+ * 3. Optimized SEO metadata per state
+ */
+
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import PayPerSignedCase from '@/components/PayPerSignedCase';
+import StatesCoverage from '@/components/StatesCoverage';
+import Compliance from '@/components/Compliance';
+import FinalCTA from '@/components/FinalCTA';
+import JsonLd from '@/components/JsonLd';
+
+const states = [
+  { name: 'Alabama', code: 'AL', slug: 'alabama' },
+  { name: 'Alaska', code: 'AK', slug: 'alaska' },
+  { name: 'Arizona', code: 'AZ', slug: 'arizona' },
+  { name: 'Arkansas', code: 'AR', slug: 'arkansas' },
+  { name: 'California', code: 'CA', slug: 'california' },
+  { name: 'Colorado', code: 'CO', slug: 'colorado' },
+  { name: 'Connecticut', code: 'CT', slug: 'connecticut' },
+  { name: 'Delaware', code: 'DE', slug: 'delaware' },
+  { name: 'Florida', code: 'FL', slug: 'florida' },
+  { name: 'Georgia', code: 'GA', slug: 'georgia' },
+  { name: 'Hawaii', code: 'HI', slug: 'hawaii' },
+  { name: 'Idaho', code: 'ID', slug: 'idaho' },
+  { name: 'Illinois', code: 'IL', slug: 'illinois' },
+  { name: 'Indiana', code: 'IN', slug: 'indiana' },
+  { name: 'Iowa', code: 'IA', slug: 'iowa' },
+  { name: 'Kansas', code: 'KS', slug: 'kansas' },
+  { name: 'Kentucky', code: 'KY', slug: 'kentucky' },
+  { name: 'Louisiana', code: 'LA', slug: 'louisiana' },
+  { name: 'Maine', code: 'ME', slug: 'maine' },
+  { name: 'Maryland', code: 'MD', slug: 'maryland' },
+  { name: 'Massachusetts', code: 'MA', slug: 'massachusetts' },
+  { name: 'Michigan', code: 'MI', slug: 'michigan' },
+  { name: 'Minnesota', code: 'MN', slug: 'minnesota' },
+  { name: 'Mississippi', code: 'MS', slug: 'mississippi' },
+  { name: 'Missouri', code: 'MO', slug: 'missouri' },
+  { name: 'Montana', code: 'MT', slug: 'montana' },
+  { name: 'Nebraska', code: 'NE', slug: 'nebraska' },
+  { name: 'Nevada', code: 'NV', slug: 'nevada' },
+  { name: 'New Hampshire', code: 'NH', slug: 'new-hampshire' },
+  { name: 'New Jersey', code: 'NJ', slug: 'new-jersey' },
+  { name: 'New Mexico', code: 'NM', slug: 'new-mexico' },
+  { name: 'New York', code: 'NY', slug: 'new-york' },
+  { name: 'North Carolina', code: 'NC', slug: 'north-carolina' },
+  { name: 'North Dakota', code: 'ND', slug: 'north-dakota' },
+  { name: 'Ohio', code: 'OH', slug: 'ohio' },
+  { name: 'Oklahoma', code: 'OK', slug: 'oklahoma' },
+  { name: 'Oregon', code: 'OR', slug: 'oregon' },
+  { name: 'Pennsylvania', code: 'PA', slug: 'pennsylvania' },
+  { name: 'Rhode Island', code: 'RI', slug: 'rhode-island' },
+  { name: 'South Carolina', code: 'SC', slug: 'south-carolina' },
+  { name: 'South Dakota', code: 'SD', slug: 'south-dakota' },
+  { name: 'Tennessee', code: 'TN', slug: 'tennessee' },
+  { name: 'Texas', code: 'TX', slug: 'texas' },
+  { name: 'Utah', code: 'UT', slug: 'utah' },
+  { name: 'Vermont', code: 'VT', slug: 'vermont' },
+  { name: 'Virginia', code: 'VA', slug: 'virginia' },
+  { name: 'Washington', code: 'WA', slug: 'washington' },
+  { name: 'West Virginia', code: 'WV', slug: 'west-virginia' },
+  { name: 'Wisconsin', code: 'WI', slug: 'wisconsin' },
+  { name: 'Wyoming', code: 'WY', slug: 'wyoming' },
+];
+
+// Generate static params for all states at build time
+export async function generateStaticParams() {
+  return states.map((state) => ({
+    state: `mva-leads-${state.slug}`,
+  }));
+}
+
+// Generate metadata for each state page
+export async function generateMetadata({
+  params,
+}: {
+  params: { state: string };
+}): Promise<Metadata> {
+  const stateSlug = params.state.replace('mva-leads-', '');
+  const stateData = states.find((s) => s.slug === stateSlug);
+
+  if (!stateData) {
+    return {
+      title: 'Page Not Found',
+    };
+  }
+
+  return {
+    title: `${stateData.name} Motor Vehicle Accident Leads | Injury Claim Connect`,
+    description: `Exclusive MVA leads for ${stateData.name} personal injury law firms. Warm live transfers. Pay only when leads sign with your firm. Limited ${stateData.code} firm slots available.`,
+    keywords: `${stateData.name} MVA leads, ${stateData.name} motor vehicle accident leads, ${stateData.name} car accident leads, ${stateData.code} personal injury leads, exclusive ${stateData.name} leads`,
+    openGraph: {
+      title: `${stateData.name} Motor Vehicle Accident Leads | Injury Claim Connect`,
+      description: `Exclusive MVA leads for ${stateData.name} personal injury law firms. Pay only when leads sign.`,
+      type: 'website',
+      url: `https://injuryclaimconnect.com/mva-leads-${stateData.slug}`,
+    },
+    alternates: {
+      canonical: `/mva-leads-${stateData.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export default function StatePage({ params }: { params: { state: string } }) {
+  const stateSlug = params.state.replace('mva-leads-', '');
+  const stateData = states.find((s) => s.slug === stateSlug);
+
+  if (!stateData) {
+    notFound();
+  }
+
+  return (
+    <>
+      <JsonLd state={stateData.name} />
+      <main className="min-h-screen">
+        <Hero />
+        <HowItWorks />
+        <WhyChooseUs />
+        <PayPerSignedCase />
+        <StatesCoverage state={stateData.name} stateCode={stateData.code} />
+        <Compliance />
+        <FinalCTA />
+      </main>
+    </>
+  );
+}
