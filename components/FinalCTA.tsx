@@ -35,6 +35,15 @@ export default function FinalCTA() {
                 <span>Limited firm slots per state</span>
               </div>
             </div>
+
+            <div className="cta-urgency-banner-inline">
+              <svg className="urgency-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="urgency-text">
+                <strong>Limited availability:</strong> We cap the number of partner firms per state to maintain lead quality and exclusivity. Slots fill quickly in competitive markets.
+              </p>
+            </div>
           </div>
 
           <div className="cta-form-block">
@@ -123,15 +132,6 @@ export default function FinalCTA() {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="cta-urgency-banner">
-          <svg className="urgency-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p className="urgency-text">
-            <strong>Limited availability:</strong> We cap the number of partner firms per state to maintain lead quality and exclusivity. Slots fill quickly in competitive markets.
-          </p>
         </div>
       </div>
     </section>

@@ -133,8 +133,8 @@ export default function StatePage({ params }: { params: { state: string } }) {
       <main className="min-h-screen">
         <Hero />
         <HowItWorks />
-        <WhyChooseUs />
         <PayPerSignedCase />
+        <WhyChooseUs />
         <StatesCoverage state={stateData.name} stateCode={stateData.code} />
         <Compliance />
         <FinalCTA />
