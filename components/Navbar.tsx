@@ -33,15 +33,18 @@ export default function Navbar() {
     <nav className={`navbar ${isVisible ? 'navbar-visible' : ''}`}>
       <div className="navbar-container">
         {/* Logo */}
-        <div className="navbar-logo">
+        <button
+          onClick={() => scrollToSection('hero')}
+          className="navbar-logo"
+        >
           <Image
-            src="/logo.png"
+            src="/navigation.png"
             alt="Injury Claim Connect"
             width={160}
             height={40}
             priority
           />
-        </div>
+        </button>
 
         {/* Navigation Links */}
         <div className="navbar-links">
