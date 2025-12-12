@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="hero">
       <div className="container">
         <div className="hero-content">
           <div className="hero-logo-wrapper">

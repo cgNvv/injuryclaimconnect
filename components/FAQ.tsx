@@ -77,7 +77,7 @@ export default function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <section className="section-light">
+      <section className="section-light" id="faq">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Frequently Asked Questions</h2>
