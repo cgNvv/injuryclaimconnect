@@ -1,8 +1,21 @@
+import Image from 'next/image';
+
 export default function Hero() {
   return (
     <section className="hero-section">
       <div className="container">
         <div className="hero-content">
+          <div className="hero-logo-wrapper">
+            <Image
+              src="/header.png"
+              alt="Injury Claim Connect"
+              width={400}
+              height={100}
+              priority
+              className="hero-logo"
+            />
+          </div>
+
           <h1 className="hero-headline">
             Exclusive Motor Vehicle Accident Leads for Personal Injury Law Firms
           </h1>
