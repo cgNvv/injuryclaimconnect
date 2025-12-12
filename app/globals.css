@@ -121,15 +121,20 @@ body {
    =========================== */
 
 .hero-section {
-  padding: 6rem 1.5rem;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 4rem;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hero-logo-wrapper {
@@ -195,7 +200,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem 3rem;
   }
 
   .hero-logo {
