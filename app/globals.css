@@ -140,6 +140,7 @@ body {
 .hero-logo-wrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 3.5rem;
 }
 
 .hero-logo {
@@ -201,6 +202,10 @@ body {
 @media (max-width: 768px) {
   .hero-section {
     padding: 2rem 1.5rem 3rem;
+  }
+
+  .hero-logo-wrapper {
+    margin-bottom: 2.5rem;
   }
 
   .hero-logo {
