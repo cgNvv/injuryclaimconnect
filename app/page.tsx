@@ -5,6 +5,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import PayPerSignedCase from '@/components/PayPerSignedCase';
 import StatesCoverage from '@/components/StatesCoverage';
 import Compliance from '@/components/Compliance';
+import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
 import JsonLd from '@/components/JsonLd';
 
@@ -40,6 +41,7 @@ export default function HomePage() {
         <WhyChooseUs />
         <StatesCoverage />
         <Compliance />
+        <FAQ />
         <FinalCTA />
       </main>
     </>

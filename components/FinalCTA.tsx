@@ -97,13 +97,22 @@ export default function FinalCTA() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="state" className="form-label">Primary State(s) of Practice</label>
+                  <label htmlFor="multi-state" className="form-label">Is your firm multi-state?</label>
+                  <select id="multi-state" name="multi-state" className="form-select" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="state" className="form-label">State(s) of Practice</label>
                   <input
                     type="text"
                     id="state"
                     name="state"
                     className="form-input"
-                    placeholder="e.g., California, Texas"
+                    placeholder="e.g., California, Texas, Florida, New York"
                     required
                   />
                 </div>
