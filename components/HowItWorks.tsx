@@ -69,6 +69,15 @@ export default function HowItWorks() {
             Injury Claim Connect eliminates the inefficiencies of traditional lead generation. You receive pre-screened, motivated MVA leads who are actively seeking representation—and you only invest when they become paying clients.
           </p>
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a href="#contact" className="cta-button cta-button-primary">
+            Start Receiving Qualified Leads
+            <svg className="button-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

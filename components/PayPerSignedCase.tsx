@@ -172,6 +172,15 @@ export default function PayPerSignedCase() {
             We invest in rigorous qualification processes, train intake specialists on MVA case criteria, and continuously optimize lead sources because your conversion rate directly impacts our business. When you win, we win.
           </p>
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a href="#contact" className="cta-button cta-button-primary">
+            See How Much You Can Save
+            <svg className="button-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );
