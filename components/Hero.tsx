@@ -9,8 +9,8 @@ export default function Hero() {
             <Image
               src="/header.png"
               alt="Injury Claim Connect"
-              width={400}
-              height={100}
+              width={240}
+              height={60}
               priority
               className="hero-logo"
             />
